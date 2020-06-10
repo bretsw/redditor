@@ -94,7 +94,7 @@ get_posts <-
 #'
 #' example_posts <- get_posts("education")
 #' example_posts <- clean_posts(example_posts)
-#' min(example_posts$post_date_time)  # Returns date-time of most recent post
+#' min(example_posts$post_date_time)  # Returns date-time of earliest post
 #' }
 #' @export
 clean_posts <- function(x) {

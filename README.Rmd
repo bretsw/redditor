@@ -31,7 +31,7 @@ The goal of {redditor} is to retrieve recent subreddit data for analysis in R.
 Soon, you will be able to install the released version of {redditor} from [CRAN](https://CRAN.R-project.org) with:
 
 ```{r cran-installation, eval=FALSE}
-#install.packages("redditor")
+install.packages("redditor")
 ```
 
 You can also install the development version of {redditor} from GitHub with:
@@ -53,37 +53,17 @@ If you need to revisit or edit your Reddit application key, simply visit https:/
 usethis::edit_r_environ(scope='user')
 ```
 
-```{r}
-authentication <- 
-  httr::POST(
-    url = "https://www.reddit.com/api/v1/access_token", 
-    httr::add_headers("User-Agent" = Sys.getenv('reddit_user_agent')),
-    httr::authenticate(Sys.getenv('reddit_client_id'), 
-                       Sys.getenv('reddit_client_token')
-    )
-  )
-
-httr::stop_for_status(authentication, "authenticate with Reddit")
-```
-
 ## Usage
 
 The Reddit API rate limit is 60 requests per minute. Each item returned (e.g., a post) is considered a request. So, using the `get_posts()` default to retrieve 100 would be considered 100 requests by the API and requires a pause before running again.
 
 ### get_posts()
 
-```{r}
-example_posts <- get_posts("instructionaldesign")
-```
+
 
 ### clean_posts()
 
-```{r}
-example_posts <- clean_posts(example_posts)
-min(example_posts$post_date_time)
-```
 
-We now have subreddit posts dating back to **`r min(example_posts$post_date_time)`**.
 
 ## Learning more about {redditor}
 
