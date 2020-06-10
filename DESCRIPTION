@@ -1,0 +1,33 @@
+Package: redditor
+Version: 0.1.0
+Title: Collection and Analysis of Reddit Data in R
+Authors@R: c(
+    person("K. Bret", "Staudt Willet", , 
+      email = "bret@bretsw.com", role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0002-6984-416X")
+    )
+  )
+Description: The goal of {redditor} is to...
+License: GPL-3
+URL: https://bretsw.github.io/redditor/, https://github.com/bretsw/redditor
+Depends: 
+    R (>= 4.0)
+Imports:
+    anytime (>= 0.3),
+    dplyr (>= 0.8),
+    httr (>= 1.4),
+    jsonlite (>= 1.6),
+    lubridate (>= 1.7),
+    stringr (>= 1.4),
+    tibble (>= 3.0),
+    usethis (>= 1.5)
+Suggests:
+    ggplot2,
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0),
+    tidyverse
+Encoding: UTF-8
+VignetteBuilder: knitr
+LazyData: TRUE
+RoxygenNote: 7.0.2
